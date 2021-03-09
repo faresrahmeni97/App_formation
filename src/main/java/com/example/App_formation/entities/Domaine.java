@@ -13,7 +13,7 @@ public class Domaine implements Serializable {
     private int id ;
     private String libelle;
 
-    @OneToMany
+    @OneToMany(mappedBy="domaine",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Formation> formations;
 
 }

@@ -24,6 +24,9 @@ public class Formation implements Serializable {
     private Domaine domaine;
 
     @ManyToMany (cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinTable(name = "FORMATION_SESSION", joinColumns = {
+            @JoinColumn(name = "FORMATION_ID") }, inverseJoinColumns = {
+            @JoinColumn(name = "SESSION_ID") })
     @JsonIgnore
     private Set<Session> sessions;
 

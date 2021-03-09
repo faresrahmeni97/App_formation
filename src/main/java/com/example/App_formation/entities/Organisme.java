@@ -15,9 +15,9 @@ public class Organisme implements Serializable {
     private String libelle;
 
 
-    @OneToMany
+    @OneToMany(mappedBy="organisme",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Session> sessions;
 
-    @OneToMany
+    @OneToMany(mappedBy="organisme",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Formateur> formateurs;
 }

@@ -22,6 +22,6 @@ public class Formateur implements Serializable {
     @ManyToOne
     private Organisme organisme;
 
-    @OneToMany
+    @OneToMany(mappedBy="formateur",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Session> sessions;
 }

@@ -15,6 +15,6 @@ public class Profil implements Serializable {
     private String libelle;
 
 
-    @OneToMany
+    @OneToMany(mappedBy="profil",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Participant> participants;
 }

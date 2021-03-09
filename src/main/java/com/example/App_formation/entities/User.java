@@ -16,9 +16,9 @@ public class User implements Serializable {
     private String login;
     private int password;
 
-/*    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+   @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLES", joinColumns = {
-            @JoinColumn(name = "USER_ID") }, inverseJoinColumns = {
+            @JoinColumn(name = "USER_CODE") }, inverseJoinColumns = {
             @JoinColumn(name = "ROLE_ID") })
     private Set<Role> roles;
 
@@ -29,7 +29,6 @@ public class User implements Serializable {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
- */
 
     public int getCode() {
         return code;
