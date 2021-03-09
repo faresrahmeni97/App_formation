@@ -21,6 +21,9 @@ public class Session implements Serializable {
     private String lieu;
 
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinTable(name = "SESSION_FORMATION", joinColumns = {
+            @JoinColumn(name = "SESSION_ID") }, inverseJoinColumns = {
+            @JoinColumn(name = "FORMATION_ID") })
     @JsonIgnore
     private Set<Formation> formations;
 
@@ -31,6 +34,9 @@ public class Session implements Serializable {
     private Formateur formateur;
 
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinTable(name = "SESSION_PARTICIPANT", joinColumns = {
+            @JoinColumn(name = "SESSION_ID") }, inverseJoinColumns = {
+            @JoinColumn(name = "PARTICIPANT_ID") })
     @JsonIgnore
     private Set<Participant> participants;
 }

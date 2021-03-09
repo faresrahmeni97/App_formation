@@ -20,11 +20,11 @@ public class Participant implements Serializable {
     @ManyToOne
     private Profil profil;
 
-    @ManyToMany
+    /*@ManyToMany
     @JoinTable(name = "PARTICIPANT_SESSSIONS", joinColumns = {
             @JoinColumn(name = "PARTICIPANT_ID") }, inverseJoinColumns = {
             @JoinColumn(name = "SESSION_ID") })
-    private Set<Session> sessions;
+    private Set<Session> sessions;*/
 
     @ManyToOne
     private Pays pays;
