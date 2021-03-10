@@ -39,13 +39,14 @@ public class UserController {
         userRep.delete(user);
         return ResponseEntity.ok().build();
     }
-    @PutMapping("/user/{code}")
+    @PutMapping("/updateuser/{code}")
     public User updateUser(@PathVariable(value = "code") Long code,
                            @Valid @RequestBody User userUpdated) {
 
         User user = userRep.findById(code).orElseThrow(null);
         user.setLogin(userUpdated.getLogin());
         user.setPassword(userUpdated.getPassword());
+        user.setRoles(userUpdated.getRoles());
         User updatedUser = userRep.save(user);
         return updatedUser;
     }

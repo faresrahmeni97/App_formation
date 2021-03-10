@@ -20,4 +20,36 @@ public class Organisme implements Serializable {
 
     @OneToMany(mappedBy="organisme",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Formateur> formateurs;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
+    }
+
+    public Set<Formateur> getFormateurs() {
+        return formateurs;
+    }
+
+    public void setFormateurs(Set<Formateur> formateurs) {
+        this.formateurs = formateurs;
+    }
 }

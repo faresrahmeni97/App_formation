@@ -29,5 +29,59 @@ public class Participant implements Serializable {
     @ManyToOne
     private Pays pays;
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public int getTel() {
+        return tel;
+    }
+
+    public void setTel(int tel) {
+        this.tel = tel;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public Profil getProfil() {
+        return profil;
+    }
+
+    public void setProfil(Profil profil) {
+        this.profil = profil;
+    }
+
+    public Pays getPays() {
+        return pays;
+    }
+
+    public void setPays(Pays pays) {
+        this.pays = pays;
+    }
 }

@@ -17,4 +17,28 @@ public class Pays implements Serializable {
 
     @OneToMany(mappedBy="pays",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<Participant> participants;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public Set<Participant> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(Set<Participant> participants) {
+        this.participants = participants;
+    }
 }

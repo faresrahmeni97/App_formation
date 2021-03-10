@@ -11,23 +11,23 @@ public class Role implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="role_id")
-  private int id;
+  private long id;
     @Column
-  private int nom;
+  private String nom;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getNom() {
+    public String getNom() {
         return nom;
     }
 
-    public void setNom(int nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 }

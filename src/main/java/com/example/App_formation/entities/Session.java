@@ -39,4 +39,77 @@ public class Session implements Serializable {
             @JoinColumn(name = "PARTICIPANT_ID") })
     @JsonIgnore
     private Set<Participant> participants;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getDate_deb() {
+        return date_deb;
+    }
+
+    public void setDate_deb(Date date_deb) {
+        this.date_deb = date_deb;
+    }
+
+    public Date getDate_fin() {
+        return date_fin;
+    }
+
+    public void setDate_fin(Date date_fin) {
+        this.date_fin = date_fin;
+    }
+
+    public int getNbparticipant() {
+        return nbparticipant;
+    }
+
+    public void setNbparticipant(int nbparticipant) {
+        this.nbparticipant = nbparticipant;
+    }
+
+    public String getLieu() {
+        return lieu;
+    }
+
+    public void setLieu(String lieu) {
+        this.lieu = lieu;
+    }
+
+    public Set<Formation> getFormations() {
+        return formations;
+    }
+
+    public void setFormations(Set<Formation> formations) {
+        this.formations = formations;
+    }
+
+    public Organisme getOrganisme() {
+        return organisme;
+    }
+
+    public void setOrganisme(Organisme organisme) {
+        this.organisme = organisme;
+    }
+
+    public Formateur getFormateur() {
+        return formateur;
+    }
+
+    public void setFormateur(Formateur formateur) {
+        this.formateur = formateur;
+    }
+
+    public Set<Participant> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(Set<Participant> participants) {
+        this.participants = participants;
+    }
 }

@@ -30,5 +30,59 @@ public class Formation implements Serializable {
     @JsonIgnore
     private Set<Session> sessions;*/
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getType_formation() {
+        return type_formation;
+    }
+
+    public void setType_formation(String type_formation) {
+        this.type_formation = type_formation;
+    }
+
+    public int getNbSession() {
+        return nbSession;
+    }
+
+    public void setNbSession(int nbSession) {
+        this.nbSession = nbSession;
+    }
+
+    public int getDuree() {
+        return duree;
+    }
+
+    public void setDuree(int duree) {
+        this.duree = duree;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
+    }
+
+    public Domaine getDomaine() {
+        return domaine;
+    }
+
+    public void setDomaine(Domaine domaine) {
+        this.domaine = domaine;
+    }
 }

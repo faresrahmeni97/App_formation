@@ -12,7 +12,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="user_code")
-    private int code;
+    private long code;
     private String login;
     private int password;
 
@@ -30,11 +30,11 @@ public class User implements Serializable {
         this.roles = roles;
     }
 
-    public int getCode() {
+    public long getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(long code) {
         this.code = code;
     }
 
