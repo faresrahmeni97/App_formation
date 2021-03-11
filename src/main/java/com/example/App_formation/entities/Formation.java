@@ -13,7 +13,7 @@ public class Formation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="formation_id")
-    private int id;
+    private long id;
     private String titre;
     private String type_formation;
     private int nbSession;
@@ -30,11 +30,11 @@ public class Formation implements Serializable {
     @JsonIgnore
     private Set<Session> sessions;*/
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

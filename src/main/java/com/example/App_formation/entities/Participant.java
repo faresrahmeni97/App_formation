@@ -1,6 +1,8 @@
 package com.example.App_formation.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -12,12 +14,13 @@ public class Participant implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="participant_id")
-    private int id;
+    private long id;
     private String nom;
     private String prenom;
-    private int tel ;
+    private long tel ;
     private String mail;
     @ManyToOne
+
     private Profil profil;
 
     /*@ManyToMany
@@ -29,11 +32,11 @@ public class Participant implements Serializable {
     @ManyToOne
     private Pays pays;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -53,11 +56,11 @@ public class Participant implements Serializable {
         this.prenom = prenom;
     }
 
-    public int getTel() {
+    public long getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(long tel) {
         this.tel = tel;
     }
 

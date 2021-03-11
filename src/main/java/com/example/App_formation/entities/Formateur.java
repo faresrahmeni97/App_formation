@@ -1,5 +1,7 @@
 package com.example.App_formation.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -12,7 +14,7 @@ public class Formateur implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="formateur_id")
-    private int id;
+    private long id;
     private String nom;
     private String prenom;
     private String email;
@@ -20,16 +22,18 @@ public class Formateur implements Serializable {
     private String type;
 
     @ManyToOne
+    @JsonIgnore
     private Organisme organisme;
 
     @OneToMany(mappedBy="formateur",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Session> sessions;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

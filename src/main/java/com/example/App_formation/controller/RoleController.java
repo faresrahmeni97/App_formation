@@ -6,6 +6,7 @@ import com.example.App_formation.entities.Role;
 import com.example.App_formation.entities.User;
 import com.example.App_formation.repository.RoleRepository;
 import com.example.App_formation.repository.UserRepository;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class RoleController {
     RoleRepository roleRep;
 
     @GetMapping("/roles")
+    @JsonIgnore
     public List<Role> getAllRoles() {
         List<Role> roless = roleRep.findAll();
         return roless;

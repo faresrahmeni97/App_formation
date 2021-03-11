@@ -3,6 +3,7 @@ package com.example.App_formation.controller;
 
 import com.example.App_formation.entities.User;
 import com.example.App_formation.repository.UserRepository;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +21,13 @@ public class UserController {
     UserRepository userRep;
 
     @GetMapping("/users")
+    @JsonIgnore
     public List<User> getAllUsers() {
         List<User> userss = userRep.findAll();
         return userss;
     }
     @GetMapping("/user/{code}")
+    @JsonIgnore
     public User getUserById(@PathVariable(value = "code") Long Code) {
         return userRep.findById(Code).orElseThrow(null);
     }

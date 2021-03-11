@@ -1,6 +1,8 @@
 package com.example.App_formation.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -11,18 +13,19 @@ public class Profil implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="profil_id")
-    private int id;
+    private long id;
     private String libelle;
 
 
     @OneToMany(mappedBy="profil",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Participant> participants;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
