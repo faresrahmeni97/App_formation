@@ -21,13 +21,12 @@ public class UserController {
     UserRepository userRep;
 
     @GetMapping("/users")
-    @JsonIgnore
+
     public List<User> getAllUsers() {
         List<User> userss = userRep.findAll();
         return userss;
     }
     @GetMapping("/user/{code}")
-    @JsonIgnore
     public User getUserById(@PathVariable(value = "code") Long Code) {
         return userRep.findById(Code).orElseThrow(null);
     }

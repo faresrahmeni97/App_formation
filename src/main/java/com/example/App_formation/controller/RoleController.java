@@ -25,7 +25,6 @@ public class RoleController {
     RoleRepository roleRep;
 
     @GetMapping("/roles")
-    @JsonIgnore
     public List<Role> getAllRoles() {
         List<Role> roless = roleRep.findAll();
         return roless;
