@@ -22,7 +22,6 @@ public class Formateur implements Serializable {
     private String type;
 
     @ManyToOne
-    @JsonIgnore
     private Organisme organisme;
 
     @OneToMany(mappedBy="formateur",cascade=CascadeType.ALL,fetch = FetchType.LAZY)

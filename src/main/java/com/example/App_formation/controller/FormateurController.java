@@ -20,14 +20,12 @@ public class FormateurController {
     FormateurRepository formateurRep;
 
     @GetMapping("/formateurs")
-    @JsonIgnore
     public List<Formateur> getAllFormateurs() {
         List<Formateur> formateurss = formateurRep.findAll();
         return formateurss;
     }
 
     @GetMapping("/formateur/{id}")
-    @JsonIgnore
     public Formateur getFormateurById(@PathVariable(value = "id") Long Id) {
         return formateurRep.findById(Id).orElseThrow(null);
     }
